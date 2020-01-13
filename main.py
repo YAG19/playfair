@@ -31,8 +31,6 @@ for x in range(n):
       val[x][j]=l2[k]
       k+=1
 
-
-
 a="yagnesh"
 l1=list(a)
 
@@ -52,7 +50,7 @@ z=(len(l3))
 
 if (z%2 != 0 ):
   l3.append("x")
-#print(l3)
+
 matrix=(np.asarray(val))
 print(matrix)
 k=0
@@ -64,9 +62,7 @@ def addre(word,k):
 y=[]
 for word in l3:
     y.append(addre(word,k))
-#print(y)
 m2=np.asarray(y)
-
 
 z1=[]
 z2=[]
@@ -74,11 +70,8 @@ z2=[]
 for i in y:
   for j in i:
     z1.append(int(j))
-#print(z1)
-
 
 def idon(y1,y2,y3,y4):
-  #coloum
   if y2==y4:
     if y1>=4:
         y1=0
@@ -87,8 +80,6 @@ def idon(y1,y2,y3,y4):
     else:
       y1=y1+1
       y3=y3+1
-
-  #row
   else:
     if y1==y3:
       if y2>=4:
@@ -105,8 +96,6 @@ def idon(y1,y2,y3,y4):
       y4=temp
   return(y1,y2,y3,y4)
 
-
-
 op=0 
 z3=[] 
 for i in z1:
@@ -114,7 +103,7 @@ for i in z1:
   op+=1
   if op%4==0:
     z3.append(idon(z2[op-4],z2[op-3],z2[op-2],z2[op-1]))
-#print(z3)
+
 z4=[]
 for i in z3:
   for j in i:
@@ -130,35 +119,3 @@ for i in range(len(z4)):
  
 print("Plain Text :",l3)
 print("Encryted   :",cipher_text)
-
-
-
-"""
-def bro(bb):
-  k=0
-  ee1=[]
-  ee2=[]
-  for i in bb:
-    for j in i:
-      if k%2 == 0:
-        ee1.append(j)
-      else:
-        ee2.append(i)    
-      k=k+1
-  return(ee1,ee2)
-
-def Encrypt(a,b):
-  z1.append(a)
-  z2.append(b)  
-
-
-
-ss=0
-for valuse in range(int(len(y)/2)):
-  Encrypt(y[ss],y[ss+1])
-  ss=ss+2   
-e1=[]
-e2=[]
-e1.append(bro(z1))
-e2.append(bro(z2))
-"""
