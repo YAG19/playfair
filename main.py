@@ -1,5 +1,4 @@
 import numpy as np
-
 a=[]
 l1=[]
 str="keyword"     
@@ -31,20 +30,22 @@ for x in range(n):
       val[x][j]=l2[k]
       k+=1
 
-a="yagnesh"
+a="Hi Hello how are you"
+print("\nPlain Text:",a,"\n\n")
+a=a.lower()
+def remove(string): 
+    return "".join(string.split()) 
+a=remove(a) 
 l1=list(a)
 
 def RemoveSame(duplicate): 
     final_list = [] 
-    for num in duplicate: 
-        if num not in final_list: 
-            final_list.append(num)
-        else:
-          final_list.append("x") 
-          final_list.append(num)
+    for i in range(0, len(duplicate) - 1):
+        final_list += duplicate[i]
+        if duplicate[i] == duplicate[i+1]:
+            final_list += 'x'
     return final_list
 
-print(l1)
 l3=RemoveSame(l1)
 z=(len(l3))
 
@@ -71,7 +72,7 @@ for i in y:
   for j in i:
     z1.append(int(j))
 
-def idon(y1,y2,y3,y4):
+def encrypted(y1,y2,y3,y4):
   if y2==y4:
     if y1>=4:
         y1=0
@@ -102,7 +103,7 @@ for i in z1:
   z2.append(i)
   op+=1
   if op%4==0:
-    z3.append(idon(z2[op-4],z2[op-3],z2[op-2],z2[op-1]))
+    z3.append(encrypted(z2[op-4],z2[op-3],z2[op-2],z2[op-1]))
 
 z4=[]
 for i in z3:
@@ -116,6 +117,9 @@ for i in range(len(z4)):
   if rip%2==0:
     alls(z4[rip],z4[rip+1])
   rip=rip+1  
- 
-print("Plain Text :",l3)
-print("Encryted   :",cipher_text)
+
+str1 = ''.join(cipher_text)
+str2 = ''.join(l3)
+
+print("\nEncryted message :",str1)
+print("\nDecoded message  :",str2)
